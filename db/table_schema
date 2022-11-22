@@ -1,0 +1,39 @@
+CREATE TABLE players (
+	player_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	nickname VARCHAR(15)
+);
+
+CREATE TABLE questions(
+	question_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
+	question VARCHAR (30)
+  );
+  
+  
+CREATE TABLE answers(
+	ans_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  player INTEGER REFERENCES players(player_id),
+  question INTEGER REFERENCES questions(question_id),
+  answer VARCHAR (30)                                    );
+  
+
+
+INSERT INTO players (nickname)
+VALUES 
+(
+  'player 1'
+),
+(
+  'player 2'
+);
+
+INSERT INTO questions (question)
+VALUES
+(
+  'What is your favourite colour?'
+),
+(
+  'What is your hobby?'
+),
+(
+  'What is your favourite food?'
+);
