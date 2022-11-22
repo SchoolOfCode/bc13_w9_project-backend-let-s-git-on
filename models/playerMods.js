@@ -13,7 +13,8 @@ async function getPlayerbyID(id){
     FROM players 
     INNER JOIN answers ON players.player_id = answers.player 
     INNER JOIN questions ON questions.question_id = answers.question
-    WHERE players.player_id = $1`,[id])
+    WHERE players.player_id = $1`,[id]);
+    return response.rows;
 }
 
 export {
