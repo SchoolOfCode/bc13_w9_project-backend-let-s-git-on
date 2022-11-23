@@ -36,14 +36,19 @@ VALUES
 INSERT INTO questions (question)
 VALUES
 (
-  'What is your favourite colour?'
+  'Imagine you are in a jungle and you have to choose one of these animals to fight to get to freedom - which one would you choose?'
 ),
 (
-  'What is your hobby?'
+  'Which is the most overrated?'
 ),
 (
-  'What is your favourite food?'
-);
+  'What is something you dont get the hype over?'
+),
+(
+  'Pick a superpower - but there is a twist!'
+)
+
+;
 
 /* SAMPLE ANSWERS*/
 

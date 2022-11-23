@@ -20,6 +20,7 @@ playerRouter.get("/", async function (req, res){
 
 //handles GET request for a player by ID
 playerRouter.get("/:id", async function (req,res){
+    console.log('searching for player')
     //call the function getPlayerbyID
     const result = await getPlayerbyID(req.params.id)
     //show result in the response object
