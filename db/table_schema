@@ -13,9 +13,10 @@ CREATE TABLE answers(
 	ans_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   player INTEGER REFERENCES players(player_id),
   question INTEGER REFERENCES questions(question_id),
-  answer VARCHAR (30)                                    );
+  answer VARCHAR (30)                                   );
   
 
+/*SAMPLE PLAYERS*/
 
 INSERT INTO players (nickname)
 VALUES 
@@ -24,7 +25,13 @@ VALUES
 ),
 (
   'player 2'
+),
+(
+  'player 3'
 );
+
+
+/* SAMPLE QUESTIONS*/
 
 INSERT INTO questions (question)
 VALUES
@@ -37,3 +44,33 @@ VALUES
 (
   'What is your favourite food?'
 );
+
+/* SAMPLE ANSWERS*/
+
+
+INSERT INTO answers (player, question, answer)
+VALUES 
+(
+  1, 1,'blue'
+),
+(
+  1, 2, 'play football'
+),
+(
+  1, 3, 'pizza'
+),
+(
+  2, 1,'pink'
+),
+(
+  2,2,'sewing'
+),
+(
+  2,3,'banana'
+),
+(
+  3,1, 'yellow'
+),
+(
+  3,3, 'chicken'
+)
