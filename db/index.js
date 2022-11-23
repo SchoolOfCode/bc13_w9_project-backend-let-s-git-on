@@ -3,7 +3,7 @@ import pkg from 'pg';
 
 //set up a pool instance with configuration to online database
 const { Pool } = pkg;
-const pool = new Pool({
+export const pool = new Pool({
   connectionString: process.env.POSTGRES_CONNECTION_URL,
 });
 
