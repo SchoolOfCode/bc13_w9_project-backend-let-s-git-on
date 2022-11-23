@@ -93,7 +93,7 @@ VALUES
 (5, 'Hamza'),
 (5, 'Jordan'),
 (5, 'Loz'),
-(5, 'Jessica')
+(5, 'Jessica');
 
 /*SAMPLE ANSWERS*/
 INSERT INTO answers (player, question, choices)
