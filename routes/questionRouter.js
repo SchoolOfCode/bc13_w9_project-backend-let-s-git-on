@@ -1,12 +1,16 @@
 import { Router } from "express";
-const router = Router();
+const questionRouter = Router();
 import { getQs } from "../models/questionMods.js"
 
-router.get ("/", async function (req, res){
+
+questionRouter.get ("/questions", async function (req, res){
+
 console.log ("Got to QRouter!")
 const result = await getQs()
 res.json({success: true, payload: result})
 })
 
+questionRouter.get("/questions/:id")
 
-export default router
+
+export default questionRouter
