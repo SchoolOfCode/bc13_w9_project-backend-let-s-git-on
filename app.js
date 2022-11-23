@@ -5,6 +5,7 @@ import cors from 'cors'; // import cors package
 //load router modules from their path
 import questionRouter from "./routes/questionRouter.js" 
 import playerRouter from "./routes/playerRouter.js"
+import answerRouter from "./routes/answerRouter.js"
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors()); //enable all Cross-Origin Resource Sharing (CORS) request
 //middleware to send requests to router modules. 
 app.use("/api/questions", questionRouter);
 app.use("/api/players", playerRouter);
+app.use("/api/answers", answerRouter);
 
 //attaching server to a PORT specified above.
 app.listen(PORT, function () {

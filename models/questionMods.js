@@ -9,7 +9,8 @@ async function getQs () {
    
 }
 
-//functin to get a specific question only
+
+//function to get a specific question only
 async function getQbyID (id) {
     //query the database to find the question by ID
     const response = await query (
