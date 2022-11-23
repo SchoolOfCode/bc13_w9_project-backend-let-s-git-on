@@ -16,8 +16,7 @@ async function getQbyID (id) {
      `SELECT * FROM questions
      WHERE question_id = $1`, [id]);
     return response.rows;}
-    
-    export { getQs, getQbyID} ;
+
 
 //function to show multiple choice options based on Question ID
 async function getMultipChoice(question_id){
@@ -30,3 +29,6 @@ async function getMultipChoice(question_id){
         WHERE questions.question_id = $1`, [question_id]);
     return response.rows;
 }
+
+    
+export { getQs, getQbyID, getMultipChoice} ;
