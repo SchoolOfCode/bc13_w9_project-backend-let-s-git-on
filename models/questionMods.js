@@ -8,7 +8,13 @@ async function getQs () {
     return questions.rows
    
 }
-
-export { getQs } ;
+async function getQbyID (id) {
+    //query the database to find the question by ID
+    const response = await query (
+     `SELECT * FROM questions
+     WHERE question_id = $1`, [id]);
+    return response.rows;}
+    
+    export { getQs, getQbyID} ;
 
 //newbranch
