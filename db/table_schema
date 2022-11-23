@@ -13,7 +13,7 @@ CREATE TABLE answers(
 	ans_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   player INTEGER REFERENCES players(player_id),
   question INTEGER REFERENCES questions(question_id),
-  answer VARCHAR (30)                                    );
+  answer VARCHAR (30)                                   );
   
 
 /*SAMPLE PLAYERS*/

@@ -7,8 +7,6 @@
 ✅install morgan
 ✅link morgan to app requests
 ✅create app.js
-set up pg -
-create db file
 
 ✅set up scripts
 ✅npm run dev
@@ -18,6 +16,11 @@ create db file
 set up routing
 create different routes for different dbs?
 direct according to get request
+
+✅create db folder
+✅set up pg (postgre SQL client)
+✅npm install pg
+✅set up connection pooling
 
 ✅create database in Elephant SQL
 ✅create table schema (using dbfiddle)
