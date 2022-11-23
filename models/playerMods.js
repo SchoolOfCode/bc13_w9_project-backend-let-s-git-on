@@ -13,10 +13,11 @@ async function getPlayerbyID(id){
     //query the dattabase to combine players, questions, and answers table where player ID matches,
     //and return the player's nickname, questions, and the respective answers.
     console.log ('searching for player function')
-    const response = await query(`SELECT players.nickname, questions.question, answers.answer 
+    const response = await query(`SELECT players.nickname, questions.question, multiple_choices.choices
     FROM players 
     INNER JOIN answers ON players.player_id = answers.player 
     INNER JOIN questions ON questions.question_id = answers.question
+    INNER JOIN multiple_choices ON multiple_choices.choice_id = answers.choices 
     WHERE players.player_id = $1`,[id]);
     return response.rows;
 }

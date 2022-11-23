@@ -96,3 +96,10 @@ VALUES
 (5, 'Jessica')
 
 /*SAMPLE ANSWERS*/
+INSERT INTO answers (player, question, choices)
+VALUES 
+(1,1,1),
+(1,2,7),
+(1,3,14),
+(1,4,20),
+(1,5,27)
