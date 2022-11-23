@@ -8,6 +8,7 @@ async function getQs () {
     return questions.rows
    
 }
+
 async function getQbyID (id) {
     //query the database to find the question by ID
     const response = await query (
@@ -17,4 +18,4 @@ async function getQbyID (id) {
     
     export { getQs, getQbyID} ;
 
-//newbranch
+//function to show multiple choice options based on Question ID
