@@ -9,6 +9,7 @@ async function getQs () {
    
 }
 
+//functin to get a specific question only
 async function getQbyID (id) {
     //query the database to find the question by ID
     const response = await query (
@@ -19,3 +20,13 @@ async function getQbyID (id) {
     export { getQs, getQbyID} ;
 
 //function to show multiple choice options based on Question ID
+async function getMultipChoice(question_id){
+    //query the database to get all choices where questions_id matches
+    //return the questions and the multiple choices
+    const response = await query(
+        `SELECT questions.question, multiple_choices.choices
+        FROM questions
+        INNER JOIN multiple_choices ON questions.question_id = multiple_choices.question_id
+        WHERE questions.question_id = $1`, [question_id]);
+    return response.rows;
+}
