@@ -59,16 +59,16 @@ export async function createAllTables() {
       INSERT INTO questions (question)
       VALUES
       (
-        'Imagine you are in a jungle and you have to choose one of these animals to fight to get to freedom - which one would you choose?'
+        'Imagine you are in a jungle and you have to choose one of these animals to get to freedom, which one do you choose?'
       ),
       (
-        'Which is the most overrated?'
+        'Which do you think is the most overrated?'
       ),
       (
         'What is something you dont get the hype over?'
       ),
       (
-        'Pick a superpower - but there is a twist!'
+        'Pick a superpower but there might be a twist!'
       ),
       (
       'Who would you choose to fight alongside you in a zombie apocalypse?'
@@ -79,8 +79,8 @@ export async function createAllTables() {
       VALUES
       (1, 'Gorilla'),
       (1, 'Bear'),
-      (1, 'Worlf'),
-      (1, 'Venomous snake'),
+      (1, 'Wolf'),
+      (1, 'Anaconda'),
       (1, 'Rhino'),
       (1, 'Kangaroo'),
       
@@ -100,9 +100,9 @@ export async function createAllTables() {
       
       (4, 'Invisibility but you smell like sewage'),
       (4, 'Flying but you constantly need the loo'),
-      (4, 'Super strength but super sticky also'),
+      (4, 'Super strength but you are also super sticky'),
       (4, 'X-ray vision but you lose your clothes when you use it'),
-      (4, 'Super stretchy but super slimy also'),
+      (4, 'Super stretchy but you are also super slimy'),
       (4, 'Shape shifter but you only turn into bugs'),
       
       (5, 'Liz'),
