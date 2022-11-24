@@ -16,6 +16,8 @@ playerRouter.get("/", async function (req, res){
     const result = await getPlayer()
     //show result in the response object
     res.json({success: true, payload: result})
+
+    //add if condition
 })
 
 //handles GET request for a player by ID
