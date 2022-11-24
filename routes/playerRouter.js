@@ -16,17 +16,40 @@ playerRouter.get("/", async function (req, res){
     const result = await getPlayer()
     //show result in the response object
     res.json({success: true, payload: result})
-
-    //add if condition
 })
 
 //handles GET request for a player by ID
 playerRouter.get("/:id", async function (req,res){
     console.log('searching for player')
-    //call the function getPlayerbyID
-    const result = await getPlayerbyID(req.params.id)
-    //show result in the response object
-    res.json({success: true, payload: result})
+
+    //add if condition to give an error is player ID do not exist. 
+    //call the function to get all players. 
+    //get an object of all the ID
+    //check condition if the ID is in the object. 
+
+    const allPlayer = await getPlayer()
+    const playerID = req.params.id;
+    let IDexist = false;
+    console.log(allPlayer[1].player_id)
+    for (let i =0; i < allPlayer.length; i++){
+        const indexID = allPlayer[i].player_id
+
+         if (indexID == playerID){
+           IDexist = true;
+           break
+        } 
+    }
+
+    if (IDexist){
+         //call the function getPlayerbyID
+       const result = await getPlayerbyID(playerID)
+       //show result in the response object
+       res.json({success: true, payload: result})
+
+    }else {
+        res.json({success:false, payload: "Player ID do not exists"})
+    }
+  
 })
 
 //handles POST request to add a player 
