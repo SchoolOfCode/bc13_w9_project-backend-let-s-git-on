@@ -59,7 +59,7 @@ playerRouter.post("/", async function(req,res){
     //call the function to add player
     const result = await addPlayer(newPlayer)
     //show result in the response object
-    res.json({success: true, message: "A new player is added", payload: result})
+    res.json({success: true, payload: result})
 })
 
 //handles DELETE request to delete a player 
@@ -68,7 +68,7 @@ playerRouter.delete("/:id", async function (req,res){
     //and pass in req.params.id as argument
     const deletedPlayer = await deletePlayer(req.params.id)
     //show deleted player in the response object
-    res.json({success: true, message: "This player has been deleted", payload: deletedPlayer})
+    res.json({success: true, payload: deletedPlayer})
 }) 
 
 

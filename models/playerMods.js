@@ -45,9 +45,13 @@ async function addPlayer(nickname){
  */
 async function deletePlayer(id){
 
+    //query the db to delete a player from the player table
+    const answers = await query(`DELETE FROM answers
+    WHERE player = $1
+    RETURNING *` ,  [id]);
     const player = await query(`DELETE FROM players
     WHERE player_id = $1
-    RETURNING *`, [id]);
+    RETURNING *` ,  [id]);
     return player.rows
 }
 
@@ -58,5 +62,3 @@ export {
     addPlayer,
     deletePlayer
 };
-
-
