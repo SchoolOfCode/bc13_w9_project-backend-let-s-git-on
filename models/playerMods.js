@@ -1,17 +1,21 @@
 //load query function from db path
 import {query} from "../db/index.js"
-
-//function to get all players
+  
+/**Query the db to select all players from the players table.
+ * @returns Returns all players from the database in an array in a payload property.
+ */
 async function getPlayer(){
-    //query the db to select all from players table
+
     const player = await query('SELECT * from players');
     return player.rows;
 }
 
-//function to get a specific player by its ID and its answers. 
+/**This function gets a player by its ID, and their corresponding questions and answers. This queries the database to combine the player, the questions, and their answers.  
+ * 
+ * @param {number} id This is the ID of the player we're looking for, taken from the request parameters.
+ * @returns Gets us an object with a payload of an array with our player's answers to questions in it.
+ */
 async function getPlayerbyID(id){
-    //query the dattabase to combine players, questions, and answers table where player ID matches,
-    //and return the player's nickname, questions, and the respective answers.
     console.log ('searching for player function')
     const response = await query(`SELECT players.nickname, questions.question, multiple_choices.choices
     FROM players 
@@ -22,17 +26,25 @@ async function getPlayerbyID(id){
     return response.rows;
 }
 
-//function to add a player (POST request)
+/**Adds a new player to the database.
+ * 
+ * @param {string} nickname This is the player name sent from the front-end via our API.
+ * @returns This returns our newly added player nickname.
+ */
 async function addPlayer(nickname){
-    //query the database to add a player into the player table and return the newly added player
     const player = await query(`INSERT INTO players (nickname)
     VALUES ($1)
     RETURNING *`, [nickname]);
     return player.rows; 
 }
 
-//function to delete a player by its ID
+/**Deletes a player from the database by ID. Currently does not have functionality if player ID is not found. 
+ * 
+ * @param {*} id This is the ID from the request parameters.
+ * @returns Returns the successfully deleted player.
+ */
 async function deletePlayer(id){
+
     //query the db to delete a player from the player table
     const answers = await query(`DELETE FROM answers
     WHERE player = $1

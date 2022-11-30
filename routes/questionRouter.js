@@ -2,7 +2,7 @@ import { Router } from "express";
 const questionRouter = Router();
 import { getQs, getQbyID, getMultipChoice} from "../models/questionMods.js"
 
-
+// Routes get requests from the app to the getQs function
 questionRouter.get ("/", async function (req, res){
 console.log ("Got to QRouter!")
 const result = await getQs()

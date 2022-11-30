@@ -10,6 +10,7 @@ const answerRouter = Router();
 
 answerRouter.post ("/", async function (req, res){
     const body = req.body;
+    console.log (body)
     const result = await postAnswer(body)
     res.json({success: true, payload: result})
     })

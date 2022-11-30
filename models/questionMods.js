@@ -1,5 +1,8 @@
 import { query } from "../db/index.js"
-
+/**A simple function to get all questions - used for next sprint. 
+ * 
+ * @returns An array of all questions.
+ */
 async function getQs () {
     console.log ("Got to getQs!")
     const questions = await query (
@@ -9,20 +12,27 @@ async function getQs () {
    
 }
 
-
-//function to get a specific question only
+/**This gets us a specific question by ID. Not currently in use.
+ * 
+ * @param {number} id This is the ID from the request parameters as usual.
+ * @returns Gives us the specific question.
+ */
 async function getQbyID (id) {
-    //query the database to find the question by ID
+
     const response = await query (
      `SELECT * FROM questions
      WHERE question_id = $1`, [id]);
     return response.rows;}
 
 
-//function to show multiple choice options based on Question ID
+
+/**This gets us the question and its linked answers from the DB.
+ * 
+ * @param {number} question_id Gets the ID from the req params
+ * @returns returns an array with the question and it's choices.
+ */
 async function getMultipChoice(question_id){
-    //query the database to get all choices where questions_id matches
-    //return the questions and the multiple choices
+
     const response = await query(
         `SELECT questions.question, multiple_choices.choices
         FROM questions
