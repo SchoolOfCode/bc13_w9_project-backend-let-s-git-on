@@ -1,7 +1,7 @@
 import { query } from "../db/index.js"
-/**A simple function to get all questions - used for next sprint. 
+/**A simple function to get all questions and their related answers.
  * 
- * @returns An array of all questions.
+ * @returns An array of all questions and their answers.
  */
 async function getQs () {
     console.log ("Got to getQs!")
