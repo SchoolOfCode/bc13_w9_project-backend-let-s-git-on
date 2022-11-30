@@ -5,7 +5,6 @@ This API provides backend and database support for The Ice Melter App frontend r
 
 
 
-
 ## This Repo Contains
  - Db folder: Contains helper scripts for resetting the database
  - Models folder: Contains 3 models documents which each contain functions that handle the logic for the routes
