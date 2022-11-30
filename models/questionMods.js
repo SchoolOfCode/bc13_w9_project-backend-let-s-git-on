@@ -1,5 +1,5 @@
 import { query } from "../db/index.js"
-/**A simple function to get all questions - mainly for debugging purposes.
+/**A simple function to get all questions - used for next sprint. 
  * 
  * @returns An array of all questions.
  */

@@ -25,4 +25,3 @@ app.use("/api/answers", answerRouter);
 app.listen(PORT, function () {
     console.log(`The server LIVES - on Port ${PORT}`);
   });
-  

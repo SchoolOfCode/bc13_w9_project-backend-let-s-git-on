@@ -1,11 +1,8 @@
 //load query function from db path
 import {query} from "../db/index.js"
-
-//function to get all players
-
-   
+  
 /**Query the db to select all players from the players table.
- * @returns Returns the selected players.
+ * @returns Returns all players from the database in an array in a payload property.
  */
 async function getPlayer(){
 
@@ -13,8 +10,7 @@ async function getPlayer(){
     return player.rows;
 }
 
-//function to get a specific player by its ID and its answers. 
-/**Queries the database to combine the player, the questions, and their answers. 
+/**This function gets a player by its ID, and their corresponding questions and answers. This queries the database to combine the player, the questions, and their answers.  
  * 
  * @param {number} id This is the ID of the player we're looking for, taken from the request parameters.
  * @returns Gets us an object with a payload of an array with our player's answers to questions in it.
@@ -30,7 +26,7 @@ async function getPlayerbyID(id){
     return response.rows;
 }
 
-/**Adds a new player to the aatabase.
+/**Adds a new player to the database.
  * 
  * @param {string} nickname This is the player name sent from the front-end via our API.
  * @returns This returns our newly added player nickname.
@@ -41,8 +37,6 @@ async function addPlayer(nickname){
     RETURNING *`, [nickname]);
     return player.rows; 
 }
-
-//function to delete a player by its ID
 
 /**Deletes a player from the database by ID. Currently does not have functionality if player ID is not found. 
  * 
