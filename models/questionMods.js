@@ -6,7 +6,9 @@ import { query } from "../db/index.js"
 async function getQs () {
     console.log ("Got to getQs!")
     const questions = await query (
-        `SELECT * FROM questions`
+        `SELECT * FROM questions
+        JOIN multiple_choices
+        ON questions.question_id = multiple_choices.question_id;`
     );
     return questions.rows
    
