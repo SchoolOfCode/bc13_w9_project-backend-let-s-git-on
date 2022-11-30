@@ -1,5 +1,5 @@
 
-# The Ice Melter App - Backend API
+# THE ICE MELTER APP - Backend API
 
 This API provides backend and database support for The Ice Melter App frontend repo.
 
